@@ -1,0 +1,15 @@
+[BITS 16];
+[ORG 0X7C00];
+MOV AL,89;
+CALL PrintCharacter;
+JMP $;
+
+PrintCharacter:
+	MOV AH,0X0E;
+	MOV BH,0X00;
+	MOV BL,0X07;
+	INT 0X10;
+	RET;
+
+TIMES 510-($-$$) DB 0;
+DW 0XAA55;
