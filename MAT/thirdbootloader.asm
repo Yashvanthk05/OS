@@ -1,6 +1,6 @@
 [BITS 16];
 [ORG 0X7C00];
-MOV SI,string;
+MOV SI,STRING;
 CALL PrintString;
 JMP $;
 
@@ -10,17 +10,17 @@ PrintCharacter:
 	MOV BL,0x07;
 	INT 0x10;
 	RET;
-	
+
 PrintString:
 	MOV AL,[SI];
-	OR AL,AL;
-	JZ EXIT;
+	OR AL,AL
+	JZ Exit
 	CALL PrintCharacter;
 	INC SI;
 	JMP PrintString;
-	EXIT:
+	Exit:
 	RET;
-	
-string DB 'Yashvanth',0;
+
+STRING DB "Yashvanth is a good boy",0;
 TIMES 510-($-$$) DB 0;
 DW 0xAA55;
