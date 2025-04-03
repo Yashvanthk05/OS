@@ -1,0 +1,6 @@
+CC=gcc
+CFLAGS=-I.
+OBJ_NAME=ta
+FILE_NAME=ta.c
+${OBJ_NAME}: ${FILE_NAME}
+	${CC} ${FILE_NAME} -o ${OBJ_NAME}
