@@ -1,4 +1,6 @@
 CC=gcc
+OBJ=prod_cons_1
+FILE=prod_cons_1.c
 CFLAGS=-I.
-ls_fork: ls_fork.c
-	$(CC) -o ls_fork ls_fork.c
+$(OBJ): $(FILE)
+	$(CC) -o $(OBJ) $(FILE)
